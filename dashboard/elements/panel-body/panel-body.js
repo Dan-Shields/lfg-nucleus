@@ -84,13 +84,13 @@
 
 			const noteOpts = {
 				name,
-				type,
-				timestamp: Date.now()
+				type
 			};
 
 			switch (type) {
 				case 'subscription':
 					noteOpts.message = comment;
+					noteOpts.timestamp = Date.now();
 					if (months > 1) {
 						noteOpts.resub = true;
 						noteOpts.months = parseInt(months, 10);
@@ -101,6 +101,7 @@
 				case 'cheer':
 					noteOpts.message = comment;
 					noteOpts.amount = parseFloat(amount);
+					noteOpts.timestamp = Date.now();
 					break;
 				case 'tip':
 					noteOpts.comment = comment;

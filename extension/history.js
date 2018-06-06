@@ -38,7 +38,7 @@ module.exports = function (nodecg) {
 		history.value.unshift(note);
 		_trimExcess(history, HISTORY_LEN);
 
-		note = clone(note)
+		note = clone(note);
 		if (note.type === 'subscription') {
 			subscriptions.value.unshift(note);
 			_trimExcess(subscriptions, HISTORY_LEN / 2);
